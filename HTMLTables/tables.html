@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>HTML Table Practice</title>
+  </head>
+  <body bgcolor = "FFAA00">
+    <table border ="3">
+      <tr>
+        <th>Favorite Foods</th>
+        <th>Pictures of Food</th>
+      </tr>
+        <th>Crab Legs with melted butter</th>
+        <td><img src="images/crabbo.jpg" alt="a picture of some crab legs and butter sauce"></td>
+      <tr>
+        <th>Philly Cheese Steak</th>
+        <td><img src="images/philly.jpg" alt="a picture of a philly cheese steak"></td>
+      </tr>
+      <tr>
+        <th>Grilled Shrimp</th>
+        <td><img src="images/shrimp.jpg" alt="a picture of some grilled shrimp"></td>
+      </tr>
+      <tr>
+        <th>Broccoli Cheddar Soup</th>
+        <td><img src="images/soup.jpg" alt="a picture of some broccoli cheddar soup"></td>
+      </tr>
+      <tr>
+        <th>Fresh Peaches</th>
+        <td><img src="images/peaches.jpg" alt="a picture of some fresh peaches"></td>
+      </tr>
+    </table>
+
+    <br />
+    <hr />
+    <br />
+
+    <table border ="3">
+      <tr>
+        <th></th>
+        <th>3-4</th>
+        <th>4-5</th>
+        <th>5-6</th>
+        <th>6-7</th>
+      </tr>
+      <tr>
+        <th>John</th>
+        <td colspan = "3">content</td>
+        <!--Taken up by column 1 -->
+        <!--Taken up by column 1 -->
+        <td>something</td>
+      </tr>
+      <tr>
+        <th>Ann</th>
+        <td rowspan = "2">content</td>
+        <td>something</td>
+        <td>something else</td>
+        <td>and something</td>
+      </tr>
+      <tr>
+        <th>Bill</th>
+        <!--Taken up by above row -->
+        <td>content</td>
+        <td>something</td>
+        <td>something else</td>
+      </tr>
+    </table>
+    
+  </body>
+</html>
