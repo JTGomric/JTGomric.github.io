@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>HTML Form Practice</title>
+  </head>
+  <body bgcolor = "AE00EA">
+    <form action = "" method = "get">
+      <h3>Write a story:</h3>
+        <textarea name = "story" rows = "5" cols = "10">Enter text here </textarea>
+    </form>
+
+    <hr />
+
+    <form action = "" method = "get">
+      <h3>What food do you like the most?</h3>
+        <input type = "radio" name = "foodChoice" value = "Quesadillas" checked = "checked" /> Quesadillas
+        <input type = "radio" name = "foodChoice" value = "Mac and Cheese" /> Mac and Cheese
+        <input type = "radio" name = "foodChoice" value = "Crab Legs" /> Crab Legs
+        <input type = "radio" name = "foodChoice" value = "Steak" /> Steak
+        <input type = "radio" name = "foodChoice" value = "Cheeseburgers" /> Cheeseburgers
+        <input type = "radio" name = "foodChoice" value = "French Toast" /> French Toast
+        <input type = "radio" name = "foodChoice" value = "Pancakes" /> Pancakes
+        <input type = "radio" name = "foodChoice" value = "Strawberries" /> Strawberries
+    </form>
+
+    <hr />
+
+    <form action = "" method = "get">
+      <h3>What is your favorite state?</h3>
+      <select name = "statePreference">
+        <option value = "Illinois">Illinois</option>
+        <option value = "Missouri">Missouri</option>
+        <option value = "California">California</option>
+        <option value = "Florida">Florida</option>
+        <option value = "New York">New York</option>
+        <option value = "Oregon">Oregon</option>
+        <option value = "Texas">Texas</option>
+        <option value = "Michigan">Michigan</option>
+        <option value = "Colorado">Colorado</option>
+        <option value = "Virginia">Virginia</option>
+        <option value = "Alaska">Alaska</option>
+      </select>
+    </form>
+
+    <hr />
+
+    <form>
+      <h3>What are some space objects that you enjoy?</h3>
+      <select name = "objectPreference" size = "10" multiple = "multiple">
+        <option value = "The Moon" selected = "selected">The Moon</option>
+        <option value = "The Sun">The Sun</option>
+        <option value = "Jupiter" selected = "selected">Jupiter</option>
+        <option value = "Saturn">Saturn</option>
+        <option value = "Venus">Venus</option>
+        <option value = "Mercury">Mercury</option>
+        <option value = "Mars">Mars</option>
+        <option value = "Uranus">Uranus</option>
+        <option value = "Neptune">Neptune</option>
+        <option value = "Pluto">Pluto</option>
+        <option value = "Nebulae">Nebulae</option>
+      </select>
+    </form>
+
+    <form>
+      <fieldset>
+        <legend>Student ID and Graduation year</legend>
+          <label>Student ID
+            <input type="text" name = "studentID"/>
+            <br />
+          </label>
+          <label>2020
+            <input type="radio" name = "yearChoice" value = "year2020"/>
+            <br />
+          </label>
+          <label>2021
+            <input type="radio" name = "yearChoice" value = "year2021"/>
+            <br />
+          </label>
+          <label>2022
+            <input type="radio" name = "yearChoice" value = "year2022"/>
+          </label>
+      </fieldset>
+    </form>
+
+  </body>
+</html>
