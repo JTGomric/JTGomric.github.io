@@ -6,7 +6,7 @@ h3{
   margin-left: 395px;
   margin-right: 395px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding: px;
   text-align:center;
   background-color:#aaaaaa;
@@ -16,7 +16,10 @@ body{
   background-color:#77AA44;
 }
 
-
+ul{
+  padding-left:20px;
+  padding-right:20px;
+}
 
 li{
   display:inline;
@@ -26,22 +29,12 @@ li{
   border-width:2px;
   background-color:#BBBBDD;
   margin: 2px;
+  margin-top: 10px;
   padding-top:2px;
   padding-bottom:2px;
 }
 
-li.first{
-  display:inline;
-  align:center;
-  border-style:dotted;
-  border-color:red;
-  border-width:2px;
-  background-color:#BBBBDD;
-  margin: 2px;
-  margin-left:38%;
-  padding-top:2px;
-  padding-bottom:2px;
-}
+
 
 div.paragraph{
   align:center;
@@ -51,11 +44,19 @@ div.paragraph{
   margin-left:auto;
   margin-right:auto;
   padding:50px;
+  margin-bottom:15px;
 
 }
 
 div.paragraph:hover{
   background-color:red;
+}
+
+div.list{
+  display:table;
+  margin-left:auto;
+  margin-right:auto;
+
 }
 
 p{
@@ -76,8 +77,10 @@ p{
 
 }
 
-h2{
-  margin-left:26%;
+div.bottomText{
+  display:table;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 a:hover{
