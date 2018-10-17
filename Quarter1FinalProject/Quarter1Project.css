@@ -1,0 +1,246 @@
+
+
+
+@keyframes motion{
+  from{
+    transform:rotate(0deg);
+    margin-left:0%;
+  }
+  to{
+    transform:rotate(360deg);
+    margin-left:100%;
+  }
+}
+
+@font-face {
+	font-family: "Roboto Light";
+	font-style: normal;
+	font-weight: 300;
+	src: local('Roboto Light'), local('Roboto-Light'), url("fonts/Roboto-Light.ttf") format('truetype');
+}
+@font-face {
+	font-family: "Roboto Light Italic";
+	font-style: normal;
+	font-weight: 300;
+	src: local('Roboto LightItalic'), local('Roboto-LightItalic'), url("fonts/Roboto-LightItalic.ttf") format('truetype');
+}
+
+body{
+  font-family: 'Roboto Light', sans-serif;
+  font-style:italic;
+  font-weight:bold;
+}
+
+.navList{
+
+
+  height:30px;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: red;
+  text-align:center;
+  padding-top:10px;
+  padding-right:40px;
+
+
+
+}
+h1{
+  width:960px;
+  height:30px;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: red;
+  text-align:center;
+  padding-bottom:8px;
+
+}
+
+li.navLi{
+  display:inline;
+  margin:10px;
+  font-size:15px;
+
+}
+
+body{
+  background-image:url("Images/Background.jpg");
+  background-repeat:repeat;
+
+}
+
+.content{
+  width:960px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+
+  margin-top:-20px;
+
+
+}
+
+#links{
+  width:960px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  background-color:red;
+  padding-top:2px;
+  padding-bottom:15px;
+  height:100px;
+  margin-top:50px;
+
+
+}
+
+#linkList{
+  list-style-position:inside;
+  text-align:left;
+  margin-left:auto;
+  margin-right:auto;
+  border-style:dashed;
+  border-color:blue;
+  width:300px;
+
+}
+
+#camp{
+  width:300px;
+
+  display:inline-block;
+  text-align:center;
+  margin-right:10px;
+  float:left;
+  background-color:red;
+  text-align:left;
+  padding:5px;
+}
+
+.expText{
+  background-color:red;
+  width:330px;
+  text-align:left;
+  margin-right:20px;
+  display:inline-block;
+  float:left;
+}
+
+#sideText{
+  width:300px;
+
+  display:inline-block;
+
+  margin-right:20px;
+  float:left;
+
+  text-align:left;
+}
+
+.sideExp{
+
+
+}
+.expImage{
+
+    width:575px;
+
+    display:inline-block;
+
+    margin-left:35px;
+
+    background-color:red;
+    text-align:center;
+    margin-bottom:20px;
+  }
+
+
+
+
+#campImg{
+  width:630px;
+  height:820px;
+  display:inline-block;
+  margin-left:10px;
+
+  float:left;
+  background-color:red;
+  text-align:left;
+}
+
+#explanation{
+  width:300px;
+  margin-top:50px;
+  display:inline-block;
+  text-align:center;
+  margin-right:10px;
+  float:left;
+  background-color:red;
+  text-align:left;
+  padding:5px;
+}
+
+#descHeader{
+  width:300px;
+  font-weight:bold;
+
+  text-decoration:underline;
+}
+
+#imgTable{
+  background-color:#FFCCAA;
+  margin-left:25px;
+  width:910px;
+}
+
+.col1{
+  width:200px;
+  text-align:center;
+}
+.col2{
+  width:400px;
+}
+.col3{
+  width:310px;
+  text-align:center;
+}
+
+#imgDiv{
+  width:960px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:50px;
+  display:block;
+  background-color:red;
+  padding-top:25px;
+
+}
+
+#falls{
+  margin:30px;
+  text-align:center;
+}
+.nav{
+  width:960px;
+  height:30px;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:red;
+  text-align:left;
+}
+
+#finalImage{
+  width:935px;
+  background-color:red;
+  margin-top:50px;
+  padding-top:25px;
+  padding-left:25px;
+  padding-bottom:25px;
+
+  margin-left:auto;
+  margin-right:auto;
+
+}
