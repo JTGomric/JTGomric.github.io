@@ -12,7 +12,7 @@ var el2 = document.getElementById("second");
 var el3 = document.getElementById("third");
 var el4 = document.getElementById("fourth");
 
-el1.textContent = randomElements[Math.floor(Math.random()*6)];
-el2.textContent = randomElements[Math.floor(Math.random()*6)];
-el3.textContent = randomElements[Math.floor(Math.random()*6)];
-el4.textContent = randomElements[Math.floor(Math.random()*6)];
+el1.textContent = randomElements[Math.round(Math.random()*6)];
+el2.textContent = randomElements[Math.round(Math.random()*6)];
+el3.textContent = randomElements[Math.round(Math.random()*6)];
+el4.textContent = randomElements[Math.round(Math.random()*6)];
