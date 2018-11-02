@@ -1,4 +1,4 @@
-var numRectangles = 1000;
+var numRectangles = 10000;
 var width = Math.PI/numRectangles;
 
 var height = new Array();
