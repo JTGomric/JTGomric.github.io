@@ -1,12 +1,12 @@
 var numRectangles = 10000;
-var width = Math.PI/numRectangles;
+var width = 2/numRectangles;
 
 var height = new Array();
 
-y=0;
+y=-1;
 for(var x = 0;x < numRectangles;x++)
 {
-  height[x]=Math.sin(y);
+  height[x]=Math.pow(Math.E,y);
 
   y+= width;
 }
