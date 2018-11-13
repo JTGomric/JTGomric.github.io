@@ -8,7 +8,7 @@ var yCrds = new Array();
 
 ctx.strokeStyle="#0000FF";
 
-var sNum = 25;
+var sNum = 39;
 ctx.lineWidth=0.01;
 var angle = 180-(((sNum-2)*180)/sNum);
 var holder = angle;
