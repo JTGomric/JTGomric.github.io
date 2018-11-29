@@ -15,8 +15,8 @@ function getYCrds(e){
 
 function reset(e){
   if(e.keyCode == 67){
-    xDiv.textContent = "X Coordinate: ";
-    yDiv.textContent = "Y Coordinate: ";
+    xDiv.textContent = "X Coordinate: 0";
+    yDiv.textContent = "Y Coordinate: 0";
   }
 }
 document.addEventListener('mousemove',getXCrds,false);
