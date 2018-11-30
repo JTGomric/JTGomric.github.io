@@ -5,16 +5,55 @@
     <title>Mandelbrot Set</title>
     <style>
       #myCanvas{
-        margin-left:auto;
-        margin-right:auto;
+        margin-left:25%;
+
         border-style:solid;
-        border:10px;
+        border-width:10px;
         border-color:blue;
+      }
+      .realInput{
+        width: 300px;
+        margin-left: auto;
+        margin-right:20px;
+        display:inline-block;
+      }
+      .imagInput{
+        width: 300px;
+        margin-left: 20px;
+        margin-right:auto;
+        display:inline-block;
       }
     </style>
   </head>
   <body>
     <canvas id="myCanvas" width="800" height="800"></canvas>
+
+    <br />
+
+    <div class="realInput">
+      <label for="RealMax" class="labelFormat" >Real Number Max:</label>
+      <input id="realMax" type="text" name="RealMax" size="15" maxlength="25" />
+    </div>
+
+    <div class="realInput">
+      <label for="RealMin" class="labelFormat" >Real Number Min:</label>
+      <input id="realMin" type="text" name="RealMin" size="15" maxlength="25" />
+    </div>
+
+    <div class="imagInput">
+      <label for="imagMax" class="labelFormat" >Imaginary Number Max:</label>
+      <input id="imagMax" type="text" name="imagMax" size="15" maxlength="25" />
+    </div>
+
+    <div class="imagInput">
+      <label for="imagMin" class="labelFormat" >Imaginary Number Min:</label>
+      <input id="imagMin" type="text" name="imagMin" size="15" maxlength="25" />
+    </div>
+
+
+    <button id="testButton">Update</button>
+
+    <script src="jQuerySource.js"></script>
     <script src="mandelbrot.js"></script>
   </body>
 </html>

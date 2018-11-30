@@ -12,6 +12,12 @@ var n = 0;
 var aa = 0;
 var bb = 0;
 
+var realMax = document.getElementById("realMax");
+var imagMax = document.getElementById("imagMax");
+var realMin = document.getElementById("realMin");
+var imagMin = document.getElementById("imagMin");
+
+$("#testButton").on("click",iterate(realMax.value,realMin.value,imagMax.value,imagMin.value,80));
 ctx.strokeStyle = "#FF0000";
 
 
@@ -22,20 +28,21 @@ function mapRange (value, a, b, c, d) {
     return c + value * (d - c);
 }
 
+function iterate(maxX,minX,maxY,minY,maxIterations){
 for(var x = 0; x<canvas.width;x++){
   for(var y = 0;y<canvas.height;y++){
 
      a = mapRange(x,0,800,-400,400);
      b = mapRange(y,0,800,-400,400);
-     a = mapRange(a,-400,400,-0.9,-0.7);
-     b = mapRange(b,-400,400,0.3,0);
+     a = mapRange(a,-400,400,minX,maxX);
+     b = mapRange(b,-400,400,minY,maxY);
      ca = a;
      cb = b;
 
      n = 0;
 
 
-    while(n < 100){
+    while(n < maxIterations){
        aa = (a*a)-(b*b);
        bb = 2*a*b;
 
@@ -49,7 +56,7 @@ for(var x = 0; x<canvas.width;x++){
       n++;
     }
 
-    if(n === 100){
+    if(n === maxIterations){
       ctx.moveTo(x,y);
       ctx.rect(x,y,1,1);
     }
@@ -60,3 +67,4 @@ for(var x = 0; x<canvas.width;x++){
 
 }
   ctx.stroke();
+}
