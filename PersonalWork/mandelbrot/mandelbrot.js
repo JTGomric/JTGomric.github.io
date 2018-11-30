@@ -13,7 +13,7 @@ var aa = 0;
 var bb = 0;
 
 ctx.strokeStyle = "#FF0000";
-ctx.translate(canvas.width / 2, canvas.height / 2);
+
 
 function mapRange (value, a, b, c, d) {
     // first map value from (a..b) to (0..1)
@@ -22,15 +22,13 @@ function mapRange (value, a, b, c, d) {
     return c + value * (d - c);
 }
 
-ctx.rect(0,0,10,10);
-ctx.stroke();
-console.log(canvas.width);
-/*for(var x = 0; x<canvas.width;x++){
+for(var x = 0; x<canvas.width;x++){
   for(var y = 0;y<canvas.height;y++){
 
-     a = mapRange(x,-480,480,2,-2);
-     b = mapRange(y,-480,480,2,-2);
-
+     a = mapRange(x,0,800,-400,400);
+     b = mapRange(y,0,800,-400,400);
+     a = mapRange(a,-400,400,-0.9,-0.7);
+     b = mapRange(b,-400,400,0.3,0);
      ca = a;
      cb = b;
 
@@ -58,7 +56,7 @@ console.log(canvas.width);
 
 
 
-  }*/
+  }
 
-//}
-  //ctx.stroke();
+}
+  ctx.stroke();
