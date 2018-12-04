@@ -70,7 +70,7 @@ for(var x = 0; x<800;x++){
      a = mapRange(x,0,800,-400,400);
      b = mapRange(y,0,800,-400,400);
      a = mapRange(a,-400,400,Number(rMin),Number(rMax));
-     b = mapRange(b,-400,400,Number(iMin),Number(iMax));
+     b = mapRange(b,-400,400,Number(iMax),Number(iMin));
 
      ca = a;
      cb = b;
