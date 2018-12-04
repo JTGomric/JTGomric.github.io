@@ -99,12 +99,15 @@ for(var x = 0; x<800;x++){
       n++;
     }
 
-    if(n != maxIterations)
+    /*if(n != maxIterations)
       drawPixel(x, y, n*2.55, n,(n*5)%255, 255);
     else {
       drawPixel(x, y, 0, 0,0, 255);
-    }
-    //drawPixel(x, y, mapRange(n,0,maxIterations,0,255), 0,0, 255);
+    }*/
+    if(n != maxIterations)
+      drawPixel(x, y, mapRange(n,0,maxIterations,0,255), 0,0, 255);
+    else
+      drawPixel(x,y,0,0,0,255);
 
 
 
