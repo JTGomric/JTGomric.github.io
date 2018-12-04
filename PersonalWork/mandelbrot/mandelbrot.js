@@ -35,7 +35,7 @@ function mapRange (value, a, b, c, d) {
     // first map value from (a..b) to (0..1)
     value = (value - a) / (b - a);
     // then map it from (0..1) to (c..d) and return it
-    return c + (value * (d - c));
+    return c + value * (d - c);
 }
 
 function rMapRange (value, a, b) {
@@ -59,18 +59,18 @@ function iMapRange (value, a, b) {
 
 function iterate(maxIterations){
   //console.log(document.getElementById("realMax").value + ", " + document.getElementById("realMin").value + ", " + document.getElementById("imagMax").value + ", " + document.getElementById("imagMin").value);
-  var rMax = document.getElementById("realMax");
-  var rMin = document.getElementById("realMin");
-  var iMax = document.getElementById("imagMax");
-  var iMin = document.getElementById("imagMin");
+  var rMax = document.getElementById("realMax").value;
+  var rMin = document.getElementById("realMin").value;
+  var iMax = document.getElementById("imagMax").value;
+  var iMin = document.getElementById("imagMin").value;
   console.log(iMax*iMax);
 for(var x = 0; x<800;x++){
   for(var y = 0;y<800;y++){
 
      a = mapRange(x,0,800,-400,400);
-     a = mapRange(a,-400,400,rMin.value,rMax.value);
-     a = mapRange(y,0,800,-400,400);
-     a = mapRange(a,-400,400,iMin.value,iMax.value);
+     b = mapRange(y,0,800,-400,400);
+     a = mapRange(a,-400,400,Number(rMin),Number(rMax));
+     b = mapRange(b,-400,400,Number(iMin),Number(iMax));
 
      ca = a;
      cb = b;
