@@ -7,9 +7,7 @@
       #myCanvas{
         margin-left:25%;
 
-        border-style:solid;
-        border-width:10px;
-        border-color:blue;
+        
       }
       .realInput{
         width: 300px;
@@ -23,9 +21,29 @@
         margin-right:auto;
         display:inline-block;
       }
+      #xCrds{
+
+        border-color: blue;
+        border-width:2px;
+        border-style:solid;
+        padding: 10px;
+        display:inline-block;
+        margin-left:43%;
+      }
+      #yCrds{
+        border-color: blue;
+        border-width:2px;
+        border-style:solid;
+        padding: 10px;
+        display:inline-block;
+      }
     </style>
   </head>
   <body>
+    <div id="xCrds">Real Coordinate: </div>
+
+    <div id="yCrds">Imaginary Coordinate: </div>
+
     <canvas id="myCanvas" width="800" height="800"></canvas>
 
     <br />
@@ -51,7 +69,9 @@
     </div>
 
 
-    <button onclick="iterate(100)">Update</button>
+
+
+    <button onclick="iterate(120)">Update</button>
 
     <!--<script src="jQuerySource.js"></script> -->
     <script src="mandelbrot.js"></script>

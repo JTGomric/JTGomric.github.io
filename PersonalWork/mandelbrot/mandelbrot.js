@@ -12,6 +12,30 @@ var n = 0;
 
 var aa = 0;
 var bb = 0;
+var xDiv = document.getElementById("xCrds");
+var yDiv = document.getElementById("yCrds");
+var rMax;
+var rMin;
+var iMax;
+var iMin;
+
+var rect = canvas.getBoundingClientRect();
+
+function getXCrds(e){
+  xDiv.textContent = "Real Coordinate: " + mapRange(mapRange((e.clientX-rect.left),0,800,-400,400),-400,400,Number(rMin),Number(rMax));
+}
+function getYCrds(e){
+  yDiv.textContent = "Imaginary Coordinate: " + mapRange(mapRange((e.clientY-rect.top),0,800,-400,400),-400,400,Number(iMin),Number(iMax));
+}
+
+
+
+
+
+canvas.addEventListener('mousemove',getXCrds,false);
+canvas.addEventListener('mousemove',getYCrds,false);
+
+
 
 
 function drawPixel (x, y, r, g, b, a) {
@@ -38,32 +62,15 @@ function mapRange (value, a, b, c, d) {
     return c + value * (d - c);
 }
 
-function rMapRange (value, a, b) {
-    // first map value from (a..b) to (0..1)
-    var c = document.getElementById("realMin").value;
-    var d = document.getElementById("realMax").value;
-    value = (value - a) / (b - a);
-    // then map it from (0..1) to (c..d) and return it
-    return c + (value * (d - c));
-}
 
-function iMapRange (value, a, b) {
-    // first map value from (a..b) to (0..1)
-    var c = document.getElementById("imagMin").value;
-    var d = document.getElementById("imagMax").value;
-    console.log(c*c*c);
-    value = (value - a) / (b - a);
-    // then map it from (0..1) to (c..d) and return it
-    return c + (value * (d - c));
-}
 
 function iterate(maxIterations){
   //console.log(document.getElementById("realMax").value + ", " + document.getElementById("realMin").value + ", " + document.getElementById("imagMax").value + ", " + document.getElementById("imagMin").value);
-  var rMax = document.getElementById("realMax").value;
-  var rMin = document.getElementById("realMin").value;
-  var iMax = document.getElementById("imagMax").value;
-  var iMin = document.getElementById("imagMin").value;
-  console.log(iMax*iMax);
+  rMax = document.getElementById("realMax").value;
+  rMin = document.getElementById("realMin").value;
+  iMax = document.getElementById("imagMax").value;
+  iMin = document.getElementById("imagMin").value;
+
 for(var x = 0; x<800;x++){
   for(var y = 0;y<800;y++){
 
@@ -93,11 +100,11 @@ for(var x = 0; x<800;x++){
     }
 
     if(n != maxIterations)
-      drawPixel(x, y, n*2.55, (n*5)%255,n, 255);
+      drawPixel(x, y, n*2.55, n,(n*5)%255, 255);
     else {
       drawPixel(x, y, 0, 0,0, 255);
     }
-
+    //drawPixel(x, y, mapRange(n,0,maxIterations,0,255), 0,0, 255);
 
 
 
