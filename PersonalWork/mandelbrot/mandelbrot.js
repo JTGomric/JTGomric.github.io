@@ -25,7 +25,7 @@ function getXCrds(e){
   xDiv.textContent = "Real Coordinate: " + mapRange(mapRange((e.clientX-rect.left),0,800,-400,400),-400,400,Number(rMin),Number(rMax));
 }
 function getYCrds(e){
-  yDiv.textContent = "Imaginary Coordinate: " + mapRange(mapRange((e.clientY-rect.top),0,800,-400,400),-400,400,Number(iMin),Number(iMax));
+  yDiv.textContent = "Imaginary Coordinate: " + mapRange(mapRange((e.clientY-rect.top),0,800,-400,400),-400,400,Number(iMax),Number(iMin));
 }
 
 
