@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Mandelbrot Set</title>
+    <style>
+      #divCanvas{
+        margin-left:auto;
+        margin-right:auto;
+        display:inline-block;
+        border-color: blue;
+        border-width:1px;
+        border-style:solid;
+        width:800px;
+        height:800px;
+
+      }
+      .content{
+        margin-left:auto;
+        margin-right:auto;
+        display:inline-block;
+        background-color:white;
+        width:960px;
+
+      }
+      body{
+        text-align:center;
+        background-image:url("Background.jpg");
+      }
+      .realInput{
+        width: 300px;
+        margin-left: auto;
+        margin-right:40px;
+        display:inline;
+      }
+      #realInputMin{
+        width: 300px;
+        margin-left: 5px;
+        margin-right:auto;
+        display:inline;
+      }
+      .imagInput{
+        width: 300px;
+        margin-left: 20px;
+        margin-right:auto;
+        display:inline;
+      }
+      .iterations{
+        width: 300px;
+        margin-left: 20px;
+        margin-right:auto;
+        display:inline;
+      }
+      #xCrds{
+        width:100px;
+        border-color: blue;
+        border-width:2px;
+        border-style:solid;
+        padding: 10px;
+        display:inline;
+        margin-left:auto;
+        margin-right:10px;
+
+      }
+      #yCrds{
+        width:100px;
+        margin-left:10px;
+        margin-right:auto;
+        border-color: blue;
+        border-width:2px;
+        border-style:solid;
+        padding: 10px;
+        display:inline;
+
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <div class="content">
+      <br />
+      <div id="xCrds">Real Coordinate: </div>
+
+      <div id="yCrds">Imaginary Coordinate: </div>
+      <br />
+      <br />
+    
+      <div id="divCanvas">
+        <canvas id="myCanvas" width="800" height="800"></canvas>
+      </div>
+
+      <br />
+      <br />
+
+      <div class="realInput">
+        <label for="RealMax" class="labelFormat" >Real Number Max:</label>
+        <input id="realMax" type="text" name="RealMax" size="15" maxlength="25" />
+      </div>
+
+      <div id="realInputMin">
+        <label for="RealMin" class="labelFormat" >Real Number Min:</label>
+        <input id="realMin" type="text" name="RealMin" size="15" maxlength="25" />
+      </div>
+
+      <br />
+      <br />
+      <div class="imagInput">
+        <label for="imagMax" class="labelFormat" >Imaginary Number Max:</label>
+        <input id="imagMax" type="text" name="imagMax" size="15" maxlength="25" />
+      </div>
+
+      <div class="imagInput">
+        <label for="imagMin" class="labelFormat" >Imaginary Number Min:</label>
+        <input id="imagMin" type="text" name="imagMin" size="15" maxlength="25" />
+      </div>
+      <br />
+      <br />
+      <div class="iterations">
+        <label for="iterations" class="labelFormat" >Maximum Iterations:</label>
+        <input id="iterations" type="text" name="iterations" size="15" maxlength="25" />
+      </div>
+
+
+
+
+
+      <button onclick="iterate()">Update</button>
+      <br />
+      <p>(Note: load times may vary depending on complexity of image and number of iterations)
+      <br />
+    </div>
+    <!--<script src="jQuerySource.js"></script> -->
+    <script src="mandelbrot.js"></script>
+  </body>
+</html>
