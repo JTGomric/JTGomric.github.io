@@ -12,12 +12,22 @@ var n = 0;
 
 var aa = 0;
 var bb = 0;
+
 var xDiv = document.getElementById("xCrds");
 var yDiv = document.getElementById("yCrds");
-var rMax;
-var rMin;
-var iMax;
-var iMin;
+
+var rMax = document.getElementById("realMax");
+var rMin = document.getElementById("realMin");
+var iMax = document.getElementById("imagMax");
+var iMin = document.getElementById("imagMin");
+var maxIterations = document.getElementById("iterations");
+//Default settings
+rMax.value = "2";
+rMin.value = "-2";
+iMax.value = "2";
+iMin.value = "-2";
+maxIterations.value = "40";
+iterate();
 
 var rect = canvas.getBoundingClientRect();
 
@@ -70,7 +80,7 @@ function iterate(){
   rMin = document.getElementById("realMin").value;
   iMax = document.getElementById("imagMax").value;
   iMin = document.getElementById("imagMin").value;
-  var maxIterations = Number(document.getElementById("iterations").value);
+  maxIterations = Number(document.getElementById("iterations").value);
 
 for(var x = 0; x<800;x++){
   for(var y = 0;y<800;y++){

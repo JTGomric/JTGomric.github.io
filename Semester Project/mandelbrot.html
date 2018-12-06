@@ -8,9 +8,7 @@
         margin-left:auto;
         margin-right:auto;
         display:inline-block;
-        border-color: blue;
-        border-width:1px;
-        border-style:solid;
+
         width:800px;
         height:800px;
 
@@ -18,9 +16,10 @@
       .content{
         margin-left:auto;
         margin-right:auto;
-        display:inline-block;
+        display:block;
         background-color:white;
         width:960px;
+        padding:0px;
 
       }
       body{
@@ -72,20 +71,56 @@
         padding: 10px;
         display:inline;
 
+
+      }
+      #navList{
+
+      }
+      li.navLi{
+
+
+      }
+      #nav{
+        width:960px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:white;
+        padding:0px;
+      }
+      #mandelbrot{
+        width:960px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:white;
       }
     </style>
   </head>
   <body>
 
+    <h1 id="mandelbrot">The Mandelbrot Set</h1>
+
+    <div id= "nav">
+      <ul id="navList">
+        <li class = "navLi"><a href="HomePage.html" >Home</a></li>
+        <li class = "navLi"><a href="Images.html" >Sierpinski Triangle</a></li>
+        <li class = "navLi"><a href="Experience.html" >My Experience</a></li>
+        <li class = "navLi"><a href="OtherLinks.html" >Other Links</a></li>
+      </ul>
+    </div>
+    <br />
+    <br />
+
 
     <div class="content">
       <br />
-      <div id="xCrds">Real Coordinate: </div>
+      <p id="xCrds">Real Coordinate: </p>
 
-      <div id="yCrds">Imaginary Coordinate: </div>
+      <p id="yCrds">Imaginary Coordinate: </p>
       <br />
       <br />
-    
+
       <div id="divCanvas">
         <canvas id="myCanvas" width="800" height="800"></canvas>
       </div>
@@ -130,6 +165,12 @@
       <p>(Note: load times may vary depending on complexity of image and number of iterations)
       <br />
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <!--<script src="jQuerySource.js"></script> -->
     <script src="mandelbrot.js"></script>
   </body>
