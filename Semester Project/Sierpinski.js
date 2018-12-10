@@ -2,18 +2,94 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext('2d');
 var canvasData = ctx.getImageData(0, 0, 800, 800);
 
-ctx.translate(canvas.width/2,canvas.height/2);
-ctx.strokeStyle = "#FF0000";
-ctx.moveTo(0,0);
 
-ctx.lineTo(20,20);
+var x1 = 400;
+var y1 = 0;
+var x2 = 0;
+var y2 = 800;
+var x3 = 800;
+var y3 = 800;
+
+var pX;
+var pY;
+
+var xCoords = new Array();
+var yCoords = new Array();
+
+drawPixel(x1,y1,0,0,255,255);
+drawPixel(x2,y2,0,0,255,255);
+drawPixel(x3,y3,0,0,255,255);
 
 
-var defaultX = Math.cos((-30*Math.PI)/180)*200;
-var defaultY = Math.sin((-30*Math.PI)/180)*200;
+var choice;
+var first = false;
 
-var pointX = defaultX;
-var pointY = defaultY;
+
+iterate(1000000);
+display();
+
+function display(){
+    for(var i = 0;i<xCoords.length;i++)
+    {
+      drawPixel(Math.round(xCoords[i]),Math.round(yCoords[i]),255,0,0,255);
+    }
+
+    updateCanvas();
+}
+
+function iterate(numIterations){
+  for(var i =0;i<numIterations;i++)
+  {
+      choice = Math.floor(Math.random() * 3);
+
+      if(first == false && choice == 0)
+      {
+        pX = x1;
+        pY = y1;
+        first = true;
+      }
+      else if(first == false && choice == 1)
+      {
+        pX = x2;
+        pY = y2;
+        first = true;
+      }
+      else if(first == false && choice == 2)
+      {
+        pX = x3;
+        pY = y3;
+        first = true;
+      }
+      else if(first == true && choice == 0)
+      {
+        pX = (pX+x1)/2;
+        pY = (pY+y1)/2;
+
+        xCoords[i] = pX;
+        yCoords[i] = pY;
+      }
+      else if(first == true && choice == 1)
+      {
+        pX = (pX+x2)/2;
+        pY = (pY+y2)/2;
+
+        xCoords[i] = pX;
+        yCoords[i] = pY;
+      }
+      else if(first == true && choice == 2)
+      {
+        pX = (pX+x3)/2;
+        pY = (pY+y3)/2;
+
+        xCoords[i] = pX;
+        yCoords[i] = pY;
+      }
+   }
+}
+
+function updateCanvas() {
+    ctx.putImageData(canvasData, 0, 0);
+}
 
 function drawPixel (x, y, r, g, b, a) {
     var index = (x + y * 800) * 4;
@@ -23,41 +99,3 @@ function drawPixel (x, y, r, g, b, a) {
     canvasData.data[index + 2] = b;
     canvasData.data[index + 3] = a;
 }
-
-
-for(var i =0;i<100;i++)
-  {
-    var choice = Math.floor(Math.random()*3);
-    if(choice == 0)
-    {
-      goTo(Math.cos((-30*Math.PI)/180)*200,Math.sin((-30*Math.PI)/180)*200,pointX,pointY);
-
-    }
-    else if(choice == 1)
-    {
-      goTo(Math.cos((90*Math.PI)/180)*200,Math.sin((90*Math.PI)/180)*200,pointX,pointY);
-    }
-    else
-    {
-      goTo(Math.cos((210*Math.PI)/180)*200,Math.sin((210*Math.PI)/180)*200,pointX,pointY);
-
-    }
-    console.log(choice);
-  }
-  drawPixel(400,200,255,0,0,255);
-  drawPixel(200,0,255,0,0,255);
-  drawPixel(600,0,255,0,0,255);
-  updateCanvas();
-function updateCanvas() {
-    ctx.putImageData(canvasData, 0, 0);
-
-}
-
-function goTo(destinationX,destinationY, startX,startY){
-  pointX = (destinationX-startX)/2;
-  pointY = (destinationY-startY)/2;
-  drawPixel(pointX,pointY,255,0,0,255);
-}
-//ctx.rect(500,250,50,50);
-
-console.log("test");
