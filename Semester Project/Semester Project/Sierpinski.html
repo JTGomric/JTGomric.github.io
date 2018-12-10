@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Sierpinski Triangle</title>
+    <style>
+      #myCanvas{
+        margin-left:auto;
+        margin-right:auto;
+        display:inline-block;
+
+        width:800px;
+        height:800px;
+
+      }
+      .content{
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        background-color:black;
+        width:960px;
+        padding:0px;
+
+      }
+      body{
+        text-align:center;
+        background-image:url("background4.jpg");
+      }
+      .iterations{
+        width: 300px;
+        margin-left: 20px;
+        margin-right:auto;
+        display:inline;
+        color:white
+      }
+      #navList{
+        color:white;
+      }
+      li.navLi{
+        color:white;
+
+      }
+      #nav{
+        width:960px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:black;
+        padding:0px;
+        color:white;
+      }
+      #title{
+        width:960px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:black;
+        color:white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">The Chaos Game and The Sierpinski Triangle</h1>
+
+    <div id= "nav">
+      <ul id="navList">
+        <li class = "navLi"><a href="HomePage.html" >Home</a></li>
+        <li class = "navLi"><a href="Images.html" >Sierpinski Triangle</a></li>
+        <li class = "navLi"><a href="Experience.html" >My Experience</a></li>
+        <li class = "navLi"><a href="OtherLinks.html" >Other Links</a></li>
+      </ul>
+    </div>
+    <br />
+
+    <div class = "content">
+      <br />
+      <br />
+      <canvas id="myCanvas" width="800" height="800"></canvas>
+      <br />
+      <br />
+
+      <div class="iterations">
+        <label for="iterations" class="labelFormat" >Number of Iterations Per Click:</label>
+        <input id="iterations" type="text" name="iterations" size="15" maxlength="25" />
+      </div>
+
+      <button onclick="callIterate()">Update</button>
+
+      <button onclick="reset()">Reset</button>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <script src="Sierpinski.js"></script>
+    </div>
+  </body>
+</html>
