@@ -31,7 +31,7 @@ display();
 function display(){
     for(var i = 0;i<xCoords.length;i++)
     {
-      drawPixel(Math.round(xCoords[i]),Math.round(yCoords[i]),(500*i)%255,0,0,255);
+      drawPixel(Math.round(xCoords[i]),Math.round(yCoords[i]),255,0,0,255);
     }
 
     updateCanvas();
