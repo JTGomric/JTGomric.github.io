@@ -15,8 +15,11 @@ var r = document.getElementById("moveAmount");
 var xCoords = new Array();
 var yCoords = new Array();
 
-document.getElementById("iterations").value = 500;
+document.getElementById("iterations").value = 50000;
 document.getElementById("sideNum").value = 3;
+document.getElementById("moveAmount").value = 2;
+
+callIterate();
 
 var timesClicked = 0;
 
@@ -26,8 +29,11 @@ function callIterate(){
     if(sideNum.value == 3){
       angle += 30;
     }
-    xCorners[i] = mapRange(Math.cos(angle*(Math.PI/180))*400,-400,400,0,800);
-    yCorners[i] = mapRange(Math.sin(angle*(Math.PI/180))*400,-400,400,0,800)
+    if(sideNum.value == 5){
+      angle += 18;
+    }
+    xCorners[i] = Math.cos(angle*(Math.PI/180))*400;
+    yCorners[i] = Math.sin(angle*(Math.PI/180))*400;
 
   }
   iterate(Number(document.getElementById("iterations").value));
@@ -43,20 +49,16 @@ function mapRange (value, a, b, c, d) {
 }
 
 function reset(){
-  ctx.save();
-
-  // Use the identity matrix while clearing the canvas
-  ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Restore the transform
-  ctx.restore();
-
   for(var i = 0;i<xCoords.length;i++){
     xCoords[i] = null;
     yCoords[i] = null;
-    console.log(xCoords[i]);
   }
+  for(var x = 0;x<800;x++){
+    for(var y = 0;y<800;y++){
+      drawPixel(x,y,0,0,0,255);
+    }
+  }
+  updateCanvas();
 }
 
 function interiorAngle(sides){
@@ -73,9 +75,11 @@ var first = false;
 function display(){
     for(var i = 0;i<xCoords.length;i++)
     {
+      xCoords[i] = mapRange(xCoords[i],Math.min(...xCorners),Math.max(...xCorners),0,800);
+      yCoords[i] = mapRange(yCoords[i],Math.min(...yCorners),Math.max(...yCorners),0,800);
       drawPixel(Math.round(xCoords[i]),Math.round(yCoords[i]),255,0,0,255);
-
     }
+
 
     updateCanvas();
 }

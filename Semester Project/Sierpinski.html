@@ -17,45 +17,51 @@
         margin-left:auto;
         margin-right:auto;
         display:block;
-        background-color:black;
+        background-color:#acc6ef;
         width:960px;
         padding:0px;
 
       }
       body{
         text-align:center;
-        background-image:url("background4.jpg");
+        background-image:url("background1.jpg");
       }
       .iterations{
         width: 300px;
         margin-left: 20px;
         margin-right:auto;
         display:inline;
-        color:white
+        color:white;
       }
       #navList{
-        color:white;
+        color:red;
+        padding:3px;
       }
       li.navLi{
-        color:white;
-
+        color:red;
+        display:inline;
+        font-size:18px;
+        margin-left:10px;
+        margin-right:10px;
       }
       #nav{
         width:960px;
+        height:30px;
         display:block;
         margin-left:auto;
         margin-right:auto;
-        background-color:black;
-        padding:0px;
-        color:white;
+        background-color:#acc6ef;
+
+
+        color:red;
       }
       #title{
         width:960px;
         display:block;
         margin-left:auto;
         margin-right:auto;
-        background-color:black;
-        color:white;
+        background-color:#acc6ef;
+        color:red;
       }
     </style>
   </head>
@@ -65,9 +71,8 @@
     <div id= "nav">
       <ul id="navList">
         <li class = "navLi"><a href="HomePage.html" >Home</a></li>
-        <li class = "navLi"><a href="Images.html" >Sierpinski Triangle</a></li>
-        <li class = "navLi"><a href="Experience.html" >My Experience</a></li>
-        <li class = "navLi"><a href="OtherLinks.html" >Other Links</a></li>
+        <li class = "navLi"><a href="Sierpinski.html" >Sierpinski Triangle</a></li>
+        <li class = "navLi"><a href="mandelbrot.html" >Mandelbrot Set Viewer</a></li>
       </ul>
     </div>
     <br />
@@ -84,14 +89,16 @@
         <input id="iterations" type="text" name="iterations" size="15" maxlength="25" />
       </div>
       <div class="iterations">
-        <label for="sideNum" class="labelFormat" >Number of Probability Corners:</label>
+        <label for="sideNum" class="labelFormat" >Number of Vertices:</label>
         <input id="sideNum" type="text" name="sideNum" size="15" maxlength="25" />
       </div>
       <div class="iterations">
-        <label for="moveAmount" class="labelFormat" >Decimal Distance Moved:</label>
+        <label for="moveAmount" class="labelFormat" >Fractional Distance Moved:</label>
         <input id="moveAmount" type="text" name="moveAmount" size="15" maxlength="25" />
       </div>
 
+      <br />
+      <br />
       <button onclick="callIterate()">Update</button>
 
       <button onclick="reset()">Reset</button>
