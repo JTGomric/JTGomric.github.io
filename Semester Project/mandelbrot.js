@@ -9,6 +9,8 @@ var b = 0;
 var ca = 0;
 var cb = 0;
 var n = 0;
+var numZoomed = 1;
+
 
 var aa = 0;
 var bb = 0;
@@ -21,12 +23,16 @@ var rMin = document.getElementById("realMin");
 var iMax = document.getElementById("imagMax");
 var iMin = document.getElementById("imagMin");
 var maxIterations = document.getElementById("iterations");
+var zoomFactor = document.getElementById("zoomFactor");
+
+
 //Default settings
 rMax.value = "2";
 rMin.value = "-2";
 iMax.value = "2";
 iMin.value = "-2";
 maxIterations.value = "40";
+zoomFactor.value = "0.5";
 iterate();
 
 var rect = canvas.getBoundingClientRect();
@@ -72,6 +78,24 @@ function mapRange (value, a, b, c, d) {
     return c + value * (d - c);
 }
 
+function zoom(e){
+
+  if(e.button == 0){
+    var xCoord = mapRange(mapRange((e.clientX-rect.left),0,800,-400,400),-400,400,Number(rMin),Number(rMax));
+    var yCoord = mapRange(mapRange((e.clientY-rect.top),0,800,-400,400),-400,400,Number(iMax),Number(iMin));
+
+    document.getElementById("realMax").value = (xCoord + (Number(zoomFactor.value)/numZoomed));
+    document.getElementById("realMin").value = (xCoord - (Number(zoomFactor.value)/numZoomed));
+    document.getElementById("imagMax").value = (yCoord + (Number(zoomFactor.value)/numZoomed));
+    document.getElementById("imagMin").value = (yCoord - (Number(zoomFactor.value)/numZoomed));
+    iterate();
+    numZoomed += 1;
+  }
+  else if(e.button == 1){
+    console.log("test");
+  }
+
+}
 
 
 function iterate(){
@@ -109,7 +133,6 @@ for(var x = 0; x<800;x++){
       }
       n++;
     }
-
     /*if(n != maxIterations)
       drawPixel(x, y, n*2.55, n,(n*5)%255, 255);
     else {
@@ -119,16 +142,13 @@ for(var x = 0; x<800;x++){
       drawPixel(x, y, mapRange(n,0,maxIterations,0,255), 0,0, 255);
     else
       drawPixel(x,y,0,0,0,255);
-
-
-
   }
 
 }
   updateCanvas();
 }
 
-
+canvas.addEventListener('click',zoom,false);
 
 //Draw handler
 //function test() {
