@@ -9,9 +9,6 @@ var b = 0;
 var ca = 0;
 var cb = 0;
 var n = 0;
-var numZoomed = 1;
-
-
 var aa = 0;
 var bb = 0;
 
@@ -22,9 +19,10 @@ var rMax = document.getElementById("realMax");
 var rMin = document.getElementById("realMin");
 var iMax = document.getElementById("imagMax");
 var iMin = document.getElementById("imagMin");
+
 var maxIterations = document.getElementById("iterations");
 var zoomFactor = document.getElementById("zoomFactor");
-
+var numZoomed = 1;
 
 //Default settings
 rMax.value = "2";
@@ -37,69 +35,12 @@ iterate();
 
 var rect = canvas.getBoundingClientRect();
 
-function getXCrds(e){
-  xDiv.textContent = "Real Coordinate: " + mapRange(mapRange((e.clientX-rect.left),0,800,-400,400),-400,400,Number(rMin),Number(rMax));
-}
-function getYCrds(e){
-  yDiv.textContent = "Imaginary Coordinate: " + mapRange(mapRange((e.clientY-rect.top),0,800,-400,400),-400,400,Number(iMax),Number(iMin));
-}
-
-
-
-
-
 canvas.addEventListener('mousemove',getXCrds,false);
 canvas.addEventListener('mousemove',getYCrds,false);
+canvas.addEventListener('click',zoom,false);
 
-
-
-
-function drawPixel (x, y, r, g, b, a) {
-    var index = (x + y * 800) * 4;
-
-    canvasData.data[index + 0] = r;
-    canvasData.data[index + 1] = g;
-    canvasData.data[index + 2] = b;
-    canvasData.data[index + 3] = a;
-}
-
-
-function updateCanvas() {
-    ctx.putImageData(canvasData, 0, 0);
-}
-
-
-
-
-function mapRange (value, a, b, c, d) {
-    // first map value from (a..b) to (0..1)
-    value = (value - a) / (b - a);
-    // then map it from (0..1) to (c..d) and return it
-    return c + value * (d - c);
-}
-
-function zoom(e){
-
-  if(e.button == 0){
-    var xCoord = mapRange(mapRange((e.clientX-rect.left),0,800,-400,400),-400,400,Number(rMin),Number(rMax));
-    var yCoord = mapRange(mapRange((e.clientY-rect.top),0,800,-400,400),-400,400,Number(iMax),Number(iMin));
-
-    document.getElementById("realMax").value = (xCoord + (Number(zoomFactor.value)/numZoomed));
-    document.getElementById("realMin").value = (xCoord - (Number(zoomFactor.value)/numZoomed));
-    document.getElementById("imagMax").value = (yCoord + (Number(zoomFactor.value)/numZoomed));
-    document.getElementById("imagMin").value = (yCoord - (Number(zoomFactor.value)/numZoomed));
-    iterate();
-    numZoomed += 1;
-  }
-  else if(e.button == 1){
-    console.log("test");
-  }
-
-}
-
-
+//Main rendering function
 function iterate(){
-  //console.log(document.getElementById("realMax").value + ", " + document.getElementById("realMin").value + ", " + document.getElementById("imagMax").value + ", " + document.getElementById("imagMin").value);
   rMax = document.getElementById("realMax").value;
   rMin = document.getElementById("realMin").value;
   iMax = document.getElementById("imagMax").value;
@@ -147,11 +88,53 @@ for(var x = 0; x<800;x++){
 }
   updateCanvas();
 }
+//displays real and imaginary coordinates of mouse cursor
+function getXCrds(e){
+  xDiv.textContent = "Real Coordinate: " + mapRange(mapRange((e.clientX-rect.left),0,800,-400,400),-400,400,Number(rMin),Number(rMax));
+}
+function getYCrds(e){
+  yDiv.textContent = "Imaginary Coordinate: " + mapRange(mapRange((e.clientY-rect.top),0,800,-400,400),-400,400,Number(iMax),Number(iMin));
+}
 
-canvas.addEventListener('click',zoom,false);
+function zoom(e){
 
-//Draw handler
-//function test() {
-  //ctx.clearRect(0,0,canvas.width,canvas.height);
+  if(e.button == 0){
+    var xCoord = mapRange(mapRange((e.clientX-rect.left),0,800,-400,400),-400,400,Number(rMin),Number(rMax));
+    var yCoord = mapRange(mapRange((e.clientY-rect.top),0,800,-400,400),-400,400,Number(iMax),Number(iMin));
 
-//}
+    document.getElementById("realMax").value = (xCoord + (1/(Number(zoomFactor.value)))/(numZoomed));
+    document.getElementById("realMin").value = (xCoord - (1/(Number(zoomFactor.value)))/(numZoomed));
+    document.getElementById("imagMax").value = (yCoord + (1/(Number(zoomFactor.value)))/(numZoomed));
+    document.getElementById("imagMin").value = (yCoord - (1/(Number(zoomFactor.value)))/(numZoomed));
+    iterate();
+    numZoomed += 1;
+  }
+
+}
+function resetZoom(){
+  numZoomed = 1;
+  document.getElementById("realMax").value = 2;
+  document.getElementById("realMin").value = -2;
+  document.getElementById("imagMax").value = 2;
+  document.getElementById("imagMin").value = -2;
+  iterate();
+}
+
+function mapRange (value, a, b, c, d) {
+    value = (value - a) / (b - a);
+    return c + value * (d - c);
+}
+
+function drawPixel (x, y, r, g, b, a) {
+    var index = (x + y * 800) * 4;
+
+    canvasData.data[index + 0] = r;
+    canvasData.data[index + 1] = g;
+    canvasData.data[index + 2] = b;
+    canvasData.data[index + 3] = a;
+}
+
+
+function updateCanvas() {
+    ctx.putImageData(canvasData, 0, 0);
+}

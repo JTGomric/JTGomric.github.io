@@ -4,55 +4,63 @@
   <head>
     <title>Mandelbrot Set</title>
     <style>
-      #divCanvas{
+      @font-face {
+        font-family: "Roboto Light";
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url("fonts/Roboto-Light.ttf") format('truetype');
+      }
+      @font-face {
+        font-family: "Roboto Light Italic";
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto LightItalic'), local('Roboto-LightItalic'), url("fonts/Roboto-LightItalic.ttf") format('truetype');
+      }
+      body{
+        text-align:center;
+        font-family: 'Roboto Light', sans-serif;
+        font-style:italic;
+        font-weight:bold;
+        background-image:url("background8.jpg");
+      }
+      #mandelbrot{
+        width:960px;
+        display:block;
         margin-left:auto;
         margin-right:auto;
-        display:inline-block;
-        background-color:black;
-        width:800px;
-        height:800px;
+        background-color:#b92613;
+        color:#1331f9;
+      }
+      #nav{
+        width:960px;
+        height:30px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:#b92613;
 
+
+        color:red;
+      }
+      #navList{
+        color:red;
+        padding:3px;
+      }
+      li.navLi{
+        color:red;
+        display:inline;
+        font-size:18px;
+        margin-left:10px;
+        margin-right:10px;
       }
       .content{
         margin-left:auto;
         margin-right:auto;
         display:block;
-        background-color:#acc6ef;
+        background-color:#b92613;
         width:960px;
         padding:0px;
 
-      }
-      body{
-        text-align:center;
-        background-image:url("background1.jpg");
-      }
-      .realInput{
-        width: 300px;
-        margin-left: auto;
-        margin-right:40px;
-        display:inline;
-        color:red;
-      }
-      #realInputMin{
-        width: 300px;
-        margin-left: 5px;
-        margin-right:auto;
-        display:inline;
-        color:red;
-      }
-      .imagInput{
-        width: 300px;
-        margin-left: 20px;
-        margin-right:auto;
-        display:inline;
-        color:red;
-      }
-      .iterations{
-        width: 300px;
-        margin-left: 20px;
-        margin-right:auto;
-        display:inline;
-        color:red;
       }
       #xCrds{
         width:100px;
@@ -63,8 +71,7 @@
         display:inline;
         margin-left:auto;
         margin-right:10px;
-        color:red;
-
+        color:#1331f9;
       }
       #yCrds{
         width:100px;
@@ -75,34 +82,43 @@
         border-style:solid;
         padding: 10px;
         display:inline;
-        color:red;
-
-
+        color:#1331f9;
       }
-      #navList{
-        color:red;
-
+      #divCanvas{
+        margin-left:auto;
+        margin-right:auto;
+        display:inline-block;
+        background-color:black;
+        width:800px;
+        height:800px;
       }
-      li.navLi{
-        color:red;
+      .realInput{
+        width: 300px;
+        margin-left: auto;
+        margin-right:40px;
         display:inline;
+        color:#1331b9;
       }
-      #nav{
-        width:960px;
-        display:block;
-        margin-left:auto;
+      #realInputMin{
+        width: 300px;
+        margin-left: 5px;
         margin-right:auto;
-        background-color:#acc6ef;
-        padding:0px;
-        color:red;
+        display:inline;
+        color:#1331b9;
       }
-      #mandelbrot{
-        width:960px;
-        display:block;
-        margin-left:auto;
+      .imagInput{
+        width: 300px;
+        margin-left: 20px;
         margin-right:auto;
-        background-color:#acc6ef;
-        color:red;
+        display:inline;
+        color:#1331b9;
+      }
+      .iterations{
+        width: 300px;
+        margin-left: 20px;
+        margin-right:auto;
+        display:inline;
+        color:#1331b9;
       }
     </style>
   </head>
@@ -133,8 +149,8 @@
         <canvas id="myCanvas" width="800" height="800"></canvas>
       </div>
 
-      <br />
-      <br />
+      <p>Click Anywhere on the Display to Zoom in</p>
+
 
       <div class="realInput">
         <label for="RealMax" class="labelFormat" >Real Number Max:</label>
@@ -168,21 +184,14 @@
         <input id="zoomFactor" type="text" name="zoomFactor" size="15" maxlength="25" />
       </div>
 
-
-
-
-
       <button onclick="iterate()">Update</button>
+      <button onclick="resetZoom()">Reset Zoom</button>
       <br />
-      <p>(Note: load times may vary depending on complexity of image and number of iterations)
+      <p>(Note: load times may vary depending on complexity of image and number of iterations)</p>
       <br />
     </div>
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+
     <!--<script src="jQuerySource.js"></script> -->
     <script src="mandelbrot.js"></script>
   </body>
