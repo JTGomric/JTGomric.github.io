@@ -68,12 +68,12 @@ li.navLi{
 #arrow1{
   width:50px;
   height:25px;
-  margin-left:528px;
+  margin-left:543px;
 }
 #arrow2{
   width:50px;
   height:25px;
-  margin-left:276px;
+  margin-left:275px;
 }
 #arrow3{
   width:50px;
@@ -116,7 +116,7 @@ p{
 #copyright{
   font-style:italic;
   text-decoration:underline;
-  font-size:15px;             
+  font-size:15px;
   text-align:center;
   margin-left:auto;
   margin-right:auto;
