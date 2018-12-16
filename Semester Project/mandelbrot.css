@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "Roboto Light";
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url("fonts/Roboto-Light.ttf") format('truetype');
+}
+@font-face {
+  font-family: "Roboto Light Italic";
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto LightItalic'), local('Roboto-LightItalic'), url("fonts/Roboto-LightItalic.ttf") format('truetype');
+}
+body{
+  text-align:center;
+  font-family: 'Roboto Light', sans-serif;
+  font-style:italic;
+  font-weight:bold;
+  background-image:url("Images/background8.jpg");
+}
+#title{
+  width:960px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:#b92613;
+  color:#1331c9;
+}
+#nav{
+  width:960px;
+  height:30px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:#b92613;
+
+
+  color:red;
+}
+#navList{
+  color:red;
+  padding:3px;
+}
+li.navLi{
+  color:red;
+  display:inline;
+  font-size:18px;
+  margin-left:10px;
+  margin-right:10px;
+}
+.content{
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  background-color:#b92613;
+  width:960px;
+  padding:0px;
+
+}
+#xCrds{
+  width:100px;
+  border-color: blue;
+  border-width:2px;
+  border-style:solid;
+  padding: 10px;
+  display:inline;
+  margin-left:auto;
+  margin-right:10px;
+  color:#1331c9;
+  background-color:#d92613;
+}
+#yCrds{
+  width:100px;
+  margin-left:10px;
+  margin-right:auto;
+  border-color: blue;
+  border-width:2px;
+  border-style:solid;
+  padding: 10px;
+  display:inline;
+  color:#1331c9;
+  background-color:#d92613;
+}
+#divCanvas{
+  margin-left:auto;
+  margin-right:auto;
+  display:inline-block;
+  background-color:black;
+  width:800px;
+  height:800px;
+}
+#input{
+  width:800px;
+  background-color:#d92613;
+  margin-left:auto;
+  margin-right:auto;
+  border-width:2px;
+  border-style:solid;
+  border-color:blue;
+}
+.realInput{
+  width: 300px;
+  margin-left: auto;
+  margin-right:40px;
+  display:inline;
+  color:#1331b9;
+}
+#realInputMin{
+  width: 300px;
+  margin-left: 5px;
+  margin-right:auto;
+  display:inline;
+  color:#1331b9;
+}
+.imagInput{
+  width: 300px;
+  margin-left: 20px;
+  margin-right:auto;
+  display:inline;
+  color:#1331b9;
+}
+.iterations{
+  width: 300px;
+  margin-left: 20px;
+  margin-right:auto;
+  display:inline;
+  color:#1331b9;
+}
+button{
+  margin-left:10px;
+}
+#copyright{
+  text-decoration:underline;
+  font-size:20px;
+  margin-left:auto;
+  margin-right:auto;
+}
