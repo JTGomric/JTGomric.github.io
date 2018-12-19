@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Semester Project</title>
+    <link href="Sierpinski.css" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="icon" href="Images/icon.png">
+  </head>
+  <body>
+    <h1 id="title">The Chaos Game and The Sierpinski Triangle</h1>
+
+    <div id= "nav">
+      <ul id="navList">
+        <li class = "navLi"><a href="HomePage.html" >Home</a></li>
+        <li class = "navLi"><a href="Sierpinski.html" >Sierpinski Triangle and The Chaos Game</a></li>
+        <li class = "navLi"><a href="mandelbrot.html" >Mandelbrot Set Viewer</a></li>
+      </ul>
+    </div>
+    <br />
+
+    <div class = "content">
+      <br />
+      <canvas id="myCanvas" width="800" height="800"></canvas>
+      <br />
+      <br />
+
+      <div id="input">
+        <div class="iterations">
+          <label for="iterations" class="labelFormat" >Number of Points Added Per Click:</label>
+          <input id="iterations" type="text" name="iterations" size="10" maxlength="25" />
+        </div>
+        <br />
+        <br />
+        <div class="iterations">
+          <label for="sideNum" class="labelFormat" >Number of Vertices:</label>
+          <input id="sideNum" type="text" name="sideNum" size="10" maxlength="25" />
+        </div>
+        <br />
+        <br />
+        <div class="iterations">
+          <label for="moveAmount" class="labelFormat" >Fractional Distance Moved:</label>
+          <input id="moveAmount" type="text" name="moveAmount" size="10" maxlength="25" />
+        </div>
+        <br />
+        <br />
+        <button id="add" onclick="callIterate()">Add Points</button>
+        <button id="reset" onclick="resetFrame()">Reset</button>
+        <p>(Note: Setting the Number of Points Added Per Click to 150000 will fully generate most fractals)</p>
+      </div>
+
+      <h3>Interesting Inputs (Click rows to move numbers into input fields):</h3>
+      <table id="interestingInputs" border = "3">
+        <tr>
+          <th class = "col1">Names</th>
+          <th class = "col2">Number of Vertices</th>
+          <th class = "col3">Fractional Distance</th>
+        </tr>
+        <tr id="row1">
+          <td class = "col1">Sierpinski Triangle</td>
+          <td class = "col2">3</td>
+          <td class = "col3">2</td>
+        </tr>
+        <tr id="row2">
+          <td class = "col1">Sierpinski Pentagon</td>
+          <td class = "col2">5</td>
+          <td class = "col3">2.6667</td>
+        </tr>
+        <tr id="row3">
+          <td class = "col1">Sierpinski Hexagon</td>
+          <td class = "col2">6</td>
+          <td class = "col3">3</td>
+        </tr>
+        <tr id="row4">
+          <td class = "col1">Sierpinski Heptagon</td>
+          <td class = "col2">7</td>
+          <td class = "col3">3.2</td>
+        </tr>
+      </table>
+
+      <p id="copyright">©2018 JT Gomric</p>
+      <br />
+
+    </div>
+    <br />
+    <br />
+    <script src="JavaScript/Sierpinski.js"></script>
+  </body>
+</html>
